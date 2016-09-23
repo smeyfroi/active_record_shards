@@ -12,7 +12,6 @@ Rake::TestTask.new(:test) do |test|
   test.warning = false
 end
 
-task default: ["rubocop", "wwtd:local"]
 
 RuboCop::RakeTask.new(:rubocop) do |task|
   task.options = %w[--display-cop-names]
@@ -25,3 +24,5 @@ task :console do
   ARGV.clear
   IRB.start
 end
+
+task default: "wwtd:local"

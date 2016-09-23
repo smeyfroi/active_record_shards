@@ -11,8 +11,8 @@ gemfile:
   - gemfiles/rails5.0.gemfile
 bundler_args: --no-deployment
 script:
-  - bundle exec rake rubocop
   - bundle exec rake test
+  - bundle exec rake rubocop
 sudo: false
 cache:
   bundler: true
