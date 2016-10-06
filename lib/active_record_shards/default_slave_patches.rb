@@ -33,7 +33,7 @@ module ActiveRecordShards
           :master
         end
 
-      on_cx_switch_block(read_columns_from, construct_ro_scope: false) { columns_without_default_slave(*args, &block) }
+      on_cx_switch_block(read_columns_from) { columns_without_default_slave(*args, &block) }
     end
 
     def transaction_with_slave_off(*args, &block)

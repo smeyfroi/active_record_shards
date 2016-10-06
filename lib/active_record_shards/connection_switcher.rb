@@ -95,7 +95,7 @@ module ActiveRecordShards
     alias_method :with_slave_if, :on_slave_if
     alias_method :with_slave_unless, :on_slave_unless
 
-    def on_cx_switch_block(which, _options = {}, &_block)
+    def on_cx_switch_block(which)
       @disallow_slave ||= 0
       old_options = current_shard_selection.options
       switch_to_slave = (which == :slave && @disallow_slave.zero?)
