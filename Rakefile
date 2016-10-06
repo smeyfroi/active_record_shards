@@ -12,9 +12,7 @@ Rake::TestTask.new(:test) do |test|
   test.warning = false
 end
 
-RuboCop::RakeTask.new(:rubocop) do |task|
-  task.options = %w[--display-cop-names]
-end
+RuboCop::RakeTask.new
 
 task :console do
   require 'irb'
